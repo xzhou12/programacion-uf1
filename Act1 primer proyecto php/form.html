@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muebles</title>
+</head>
+<body>
+    <h1>MUEBLES!</h1>
+    <h2>Añadir muebles</h2>
+    <form action="form.php" method="post">
+        <label for="color">Color</label><br>
+        <input type="text" name="color" id="color"><br><br>
+        <label for="dimensiones">Dimensiones</label><br>
+        <input type="text" name="dimensiones" id="dimensiones"><br><br>
+        <label for="tipo">Tipo</label><br>
+        <input type="text" name="tipo" id="tipo"><br><br>
+        <input type="submit"> 
+    </form>
+
+    <br>
+    <br>
+    <h2>Ver todos los muebles</h2>
+    <form action="form.php/getData()" method="get">
+        <input type="submit" value="Obtener datos" name="obtenerDatos">
+    </form>
+</body>
+</html>
