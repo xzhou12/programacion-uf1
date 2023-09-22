@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2023 a las 17:47:25
+-- Tiempo de generación: 22-09-2023 a las 20:02:56
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `muebles`
+-- Base de datos: `asdasd`
 --
 
 -- --------------------------------------------------------
@@ -31,19 +31,9 @@ CREATE TABLE `muebles` (
   `id` int(11) NOT NULL,
   `color` varchar(255) DEFAULT NULL,
   `dimensiones` varchar(255) DEFAULT NULL,
-  `tipo` varchar(255) DEFAULT NULL
+  `tipo` varchar(255) DEFAULT NULL,
+  `cliente` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `muebles`
---
-
-INSERT INTO `muebles` (`id`, `color`, `dimensiones`, `tipo`) VALUES
-(1, 'asd', 'asd', 'asd'),
-(2, 'hola', 'hola', 'hola'),
-(3, 'Verde', '100m', 'Color'),
-(5, 'adios', 'adios', 'adios'),
-(6, 'Sandy', 'Sandy', 'Sandy');
 
 --
 -- Índices para tablas volcadas
@@ -63,7 +53,7 @@ ALTER TABLE `muebles`
 -- AUTO_INCREMENT de la tabla `muebles`
 --
 ALTER TABLE `muebles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
