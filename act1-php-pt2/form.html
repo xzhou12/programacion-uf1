@@ -9,7 +9,7 @@
     <style>
         .flex-box {
             display: flex;
-            flex-flow: row;
+            flex-flow: row wrap;
             justify-content: space-around;
         }
     </style>
@@ -58,6 +58,7 @@
             </form>
             <br><br>
             <h2>Mostrar cliente</h2>
+            <p>Dejar vacio si quiere mostrar todos</p>
             <form action="form.php" method="get">
                 <label for="DNI">DNI</label><br>
                 <input type="text" name="DNI" id="DNI"><br><br>
