@@ -1,44 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muebles</title>
+    <style>
+        .flex-box {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-around;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>MUEBLES!</h1>
-    <h2>Añadir muebles</h2>
-    <form action="muebles.php" method="post">
-        <label for="color">Color</label><br>
-        <input type="text" name="color" id="color"><br><br>
-        <label for="dimensiones">Dimensiones</label><br>
-        <input type="text" name="dimensiones" id="dimensiones"><br><br>
-        <label for="tipo">Tipo</label><br>
-        <input type="text" name="tipo" id="tipo"><br><br>
-        <label for="cliente">Cliente</label><br>
-        <input type="text" name="cliente" id="cliente"><br><br>
-        <input type="submit" name="addMuebles" id="addMuebles"> 
-    </form>
+    <div class="flex-box">
+        <div>
+            <h1>MUEBLES!</h1>
+            <h2>Añadir muebles</h2>
+            <form action="form.php" method="post">
+                <label for="color">Color</label><br>
+                <input type="text" name="color" id="color"><br><br>
+                <label for="dimensiones">Dimensiones</label><br>
+                <input type="text" name="dimensiones" id="dimensiones"><br><br>
+                <label for="tipo">Tipo</label><br>
+                <input type="text" name="tipo" id="tipo"><br><br>
+                <label for="cliente">Cliente</label><br>
+                <input type="text" name="cliente" id="cliente"><br><br>
+                <input type="submit" name="addMuebles" id="addMuebles">
+            </form>
+            <h2>Ver todos los muebles</h2>
+            <form action="form.php" method="get">
+                <input type="submit" value="Obtener datos" name="getMuebles" id="getMuebles">
+            </form>
+        </div>
 
-    <br>
-    <h2>Ver todos los muebles</h2>
-    <form action="muebles.php" method="get">
-        <input type="submit" value="Obtener datos" name="obtenerDatos">
-    </form>
+        
 
-    <h1>CLIENTES!</h1>
-    <h2>Añadir clientes</h2>
-    <form action="cliente.php" method="post">
-        <label for="DNI">DNI</label><br>
-        <input type="text" name="DNI" id="DNI"><br><br>
-        <label for="nombre">Nombre</label><br>
-        <input type="text" name="nombre" id="nombre"><br><br>
-        <label for="apellidos">Apellidos</label><br>
-        <input type="text" name="apellidos" id="apellidos"><br><br>
-        <label for="direccion">Direccion</label><br>
-        <input type="text" name="direccion" id="direccion"><br><br>
-        <input type="submit" name="addClientes" id="addClientes"> 
-    </form>
+        <div>
+            <h1>CLIENTES!</h1>
+            <h2>Añadir/Cambiar clientes</h2>
+            <p>Si es un cliente nuevo, añadira el cliente</p>
+            <p>Si quieres modificar la info del cliente, indica el dni y su nueva información</p>
+            <form action="form.php" method="post">
+                <label for="DNI">DNI</label><br>
+                <input type="text" name="DNI" id="DNI" required><br><br>
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" id="nombre"><br><br>
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" name="apellidos" id="apellidos"><br><br>
+                <label for="direccion">Direccion</label><br>
+                <input type="text" name="direccion" id="direccion"><br><br>
+                <input type="submit" name="addClientes" id="addClientes" value="Añadir cliente">
+                <input type="submit" name="changeInfo" id="changeInfo" value="Cambiar información">
+            </form>
+            <br><br>
+            <h2>Mostrar cliente</h2>
+            <form action="form.php" method="get">
+                <label for="DNI">DNI</label><br>
+                <input type="text" name="DNI" id="DNI"><br><br>
+                <input type="submit" name="showInfo" id="showInfo" value="Mostrar información">
+            </form>
+            <br><br>
+            <h2>Eliminar cliente</h2>
+            <form action="form.php" method="post">
+                <label for="DNI">DNI</label><br>
+                <input type="text" name="DNI" id="DNI"><br><br>
+                <input type="submit" name="deleteClient" id="deleteClient" value="Eliminar cliente">
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
