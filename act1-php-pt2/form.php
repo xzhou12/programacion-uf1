@@ -141,8 +141,8 @@ function addClientes($con)
     // Recoge todos datos del formulario html
     $dni = $_POST['DNI'];
     $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
     $direccion = $_POST['direccion'];
+    $email = $_POST['email'];
 
     // Comprueba si existe el cliente
     $existe = comprobarCliente($dni, $con);
@@ -151,7 +151,7 @@ function addClientes($con)
 
         // Sentencia sql para insertar
         $sql = 'INSERT INTO cliente
-            VALUES("' . $dni . '", "' . $nombre . '", "' . $apellidos . '", "' . $direccion . '")';
+            VALUES("' . $dni . '", "' . $nombre . '", "' . $direccion . '", "' . $email . '")';
 
         // Ejecuta la sentencia
         $ejecutar = mysqli_query($con, $sql);
@@ -184,12 +184,12 @@ function modifyClientes($con)
     if ($existe > 0) {
         // Recoge la información
         $nombre = $_POST['nombre'];
-        $apellidos = $_POST['apellidos'];
         $direccion = $_POST['direccion'];
+        $email = $_POST['email'];
 
         // Y hace la sentencia de Update
         $sql = 'UPDATE cliente
-            SET nombre ="' . $nombre . '", apellidos = "' . $apellidos . '", direccion = "' . $direccion . '"
+            SET nombre ="' . $nombre . '", direccion = "' . $direccion . '", email = "' . $email . '"
             WHERE dni = "' . $dni . '"';
 
         // Ejecuta la sentencia
@@ -277,8 +277,8 @@ function showCliente($con)
         echo "<tr>";
         echo "<th>dni</th>";
         echo "<th>nombre</th>";
-        echo "<th>apellidos</th>";
         echo "<th>direccion</th>";
+        echo "<th>email</th>";
         echo "</tr>";
         // Bucle que se repite tantas veces como resultados haya
         while ($row = mysqli_fetch_array($query)) {
@@ -286,8 +286,8 @@ function showCliente($con)
             // Muestra los resultados
             echo "<td>" . $row['dni'] . "</td>";
             echo "<td>" . $row['nombre'] . "</td>";
-            echo "<td>" . $row['apellidos'] . "</td>";
             echo "<td>" . $row['direccion'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
             echo "</tr>";
         }
 
